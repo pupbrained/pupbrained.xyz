@@ -1,0 +1,30 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="icon" type="image/x-icon" href="term.gif" />
+	<title>{title}</title>
+</head>
+
+<body>
+	<slot />
+</body>
+
+</html>
+
+<style>
+	@font-face {
+		font-family: "JetBrainsMono Nerd Font";
+		src: url("/jetbrains.ttf");
+	}
+</style>

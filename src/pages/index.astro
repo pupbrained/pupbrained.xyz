@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Statusbar from "../components/Statusbar.astro";
+import TerminalWrapper from "../components/TerminalWrapper.astro";
+---
+
+<Layout title="PossumShell - ~/">
+  <main class="font-jetbrains m-auto bg-[url('/wall.png')] overflow-hidden">
+    <div class="p-5 gap-5 w-screen h-screen inline-flex flex-col">
+      <Statusbar />
+      <TerminalWrapper />
+    </div>
+  </main>
+</Layout>
