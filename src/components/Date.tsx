@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 
 const DateModule = () => {
   const [date, setDate] = useState(new Date())
@@ -12,8 +12,8 @@ const DateModule = () => {
 
   return (
     <div className="flex items-center gap-3">
-      <p className="text-[#89dceb]"></p>
-      <p className="text-[#89dceb]">{date.toLocaleDateString("en-US")}</p>
+      <p className="text-sky"></p>
+      <p className="text-sky">{date.toLocaleDateString('en-US')}</p>
     </div>
   )
 }

@@ -13,6 +13,6 @@
     "types": ["astro/client"],
 
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": true
   }
 }

@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react"
-import Marquee from "react-fast-marquee"
+import { useEffect, useState } from 'react'
+import Marquee from 'react-fast-marquee'
 
 const Spotify = () => {
-  const [status, setStatus] = useState("Loading...")
+  const [status, setStatus] = useState('Loading...')
 
   useEffect(() => {
     async function update() {
       const val = await (
-        await fetch("https://possums.xyz/nowplaying/song")
+        await fetch('https://possums.xyz/nowplaying/song')
       ).json()
       setStatus(val)
     }
@@ -17,10 +17,10 @@ const Spotify = () => {
   }, [])
 
   return (
-    <div className="flex items-center gap-3 text-[#a6e3a1]">
+    <div className="flex items-center gap-3 text-green">
       <p></p>
-      {status != "Loading..." &&
-      status != "No song playing" &&
+      {status != 'Loading...' &&
+      status != 'No song playing' &&
       status.length > 30 ? (
           <Marquee
             className="bottom-[1px] max-w-[150px]"
@@ -31,7 +31,7 @@ const Spotify = () => {
           </Marquee>
         ) : (
           <p>
-            {status != "Loading..." && status != "No song playing"
+            {status != 'Loading...' && status != 'No song playing'
               ? status.substring(0, status.length - 2)
               : status}
           </p>

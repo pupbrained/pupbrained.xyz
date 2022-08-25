@@ -20,3 +20,6 @@ pnpm-debug.log*
 
 # VS Code Files
 .vscode
+
+# Don't worry about this one
+src/components/asdfkusfgj.js
