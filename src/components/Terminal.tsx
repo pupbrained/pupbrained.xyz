@@ -1,16 +1,9 @@
 import clsx from 'clsx'
 import * as React from 'react'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { animateScroll as scroll } from 'react-scroll'
 
 const Terminal = () => {
-  const scrollToBottom = () => {
-    scroll.scrollToBottom({
-      containerId: 'term',
-      duration: 0,
-    })
-  }
-
   const validCommandValues = [
     'help',
     'clear',
@@ -23,6 +16,7 @@ const Terminal = () => {
     'geeky',
   ]
 
+  const inputElement = useRef<HTMLInputElement>(null)
   const [input, setInput] = useState('')
   const [valid, setValid] = useState(false)
   const [commands, setCommands] = useState<
@@ -33,8 +27,77 @@ const Terminal = () => {
   >([])
 
   useEffect(() => {
-    validCommandValues.includes(input) ? setValid(true) : setValid(false)
-  }, [input])
+    if (inputElement.current) {
+      inputElement.current.focus()
+    }
+  }, [])
+
+  const scrollToBottom = () => {
+    scroll.scrollToBottom({
+      containerId: 'term',
+      duration: 0,
+    })
+  }
+
+  const makeAbout = (
+    input: string,
+    name: string,
+    prns: string,
+    favColor: string,
+    favHobby: string,
+    gender: string,
+    favThing: string
+  ) => {
+    setCommands([
+      ...commands,
+      {
+        name: input,
+        value: (
+          <div className="inline-flex">
+            <img
+              title={`An image resembling ${name} in ASCII art`}
+              src={`src/img/${name.toLowerCase()}.png`}
+              className="w-[185px] h-[185px]"
+            ></img>
+            <div className="pl-3">
+              <p>
+                ╭───
+                <span className="text-green">
+                  &nbsp;{name.toLowerCase()}@possums.xyz&nbsp;
+                </span>
+                ─────────────────────╮
+              </p>
+              <p>
+                &nbsp;&nbsp;<span className="text-red"></span>
+                &nbsp;&nbsp;{name}
+              </p>
+              <p>
+                &nbsp;&nbsp;<span className="text-peach"></span>
+                &nbsp;&nbsp;{prns}
+              </p>
+              <p>
+                &nbsp;&nbsp;<span className="text-yellow"></span>
+                &nbsp;&nbsp;{favColor}
+              </p>
+              <p>
+                &nbsp;&nbsp;<span className="text-green"></span>
+                &nbsp;&nbsp;{favHobby}
+              </p>
+              <p>
+                &nbsp;&nbsp;<span className="text-blue"></span>
+                &nbsp;&nbsp;{gender}
+              </p>
+              <p>
+                &nbsp;&nbsp;<span className="text-purple"></span>
+                &nbsp;&nbsp;{favThing}
+              </p>
+              <p>╰──────────────────────────────────────────╯</p>
+            </div>
+          </div>
+        ),
+      },
+    ])
+  }
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value)
@@ -64,53 +127,59 @@ const Terminal = () => {
       ])
       break
     case 'mars':
-      setCommands([
-        ...commands,
-        {
-          name: input,
-          value: (
-            <div className="inline-flex">
-              <img
-                title="An image resembling Mars in ASCII art"
-                src="/src/img/mard.png"
-                className="width-[150px] height-[150px]"
-              ></img>
-              <div className="pl-6">
-                <p>
-                    ╭───
-                  <span className="text-green"> mars@possums.xyz </span>
-                    ─────────────────────╮
-                </p>
-                <p>
-                    &nbsp;&nbsp;<span className="text-red"></span>
-                    &nbsp;&nbsp;Mars
-                </p>
-                <p>
-                    &nbsp;&nbsp;<span className="text-peach"></span>
-                    &nbsp;&nbsp;they/pup/vi
-                </p>
-                <p>
-                    &nbsp;&nbsp;<span className="text-yellow"></span>
-                    &nbsp;&nbsp;Green
-                </p>
-                <p>
-                    &nbsp;&nbsp;<span className="text-green"></span>
-                    &nbsp;&nbsp;Coding
-                </p>
-                <p>
-                    &nbsp;&nbsp;<span className="text-blue"></span>
-                    &nbsp;&nbsp;Agender
-                </p>
-                <p>
-                    &nbsp;&nbsp;<span className="text-purple"></span>
-                    &nbsp;&nbsp;Boyfriend :]
-                </p>
-                <p>╰──────────────────────────────────────────╯</p>
-              </div>
-            </div>
-          ),
-        },
-      ])
+      makeAbout(
+        input,
+        'Mars',
+        'they/pup/vi',
+        'Green',
+        'Coding',
+        'Agender',
+        'Boyfriend :]'
+      )
+      break
+    case 'herb':
+      makeAbout(
+        input,
+        'Herb',
+        'they/it',
+        'Purple',
+        'Games',
+        'Nonbinary',
+        'Making blorp noises'
+      )
+      break
+    case 'tofu':
+      makeAbout(
+        input,
+        'Tofu',
+        'they/he/it',
+        'Blue',
+        'Sleeping',
+        'Demiboy',
+        'Meowing'
+      )
+      break
+    case 'fen':
+      makeAbout(
+        input,
+        'Fen',
+        'they/them',
+        'Orange',
+        'Cuddling',
+        'Agender',
+        'More cuddling'
+      )
+      break
+    case 'river':
+      makeAbout(
+        input,
+        'River',
+        'it/they',
+        'Blue',
+        'Swimming',
+        'Agender',
+        'Water'
+      )
       break
     case 'clear':
       setCommands([])
@@ -131,9 +200,7 @@ const Terminal = () => {
         ...commands,
         {
           name: input,
-          value: (
-            <p>Command not found. Enter 'help' for available commands.</p>
-          ),
+          value: <p>Invalid command. Enter 'help' for available commands.</p>,
         },
       ])
       break
@@ -144,10 +211,14 @@ const Terminal = () => {
     setTimeout(scrollToBottom, 0.000000000001) // this should not fucking work but ok
   }
 
+  useEffect(() => {
+    validCommandValues.includes(input) ? setValid(true) : setValid(false)
+  }, [input])
+
   return (
     <div
       id="term"
-      className="term text-sm h-full w-full bg-basetranslucent rounded-2xl backdrop-blur-md overflow-scroll"
+      className="text-sm h-full w-full bg-basetranslucent rounded-2xl backdrop-blur-md overflow-scroll"
     >
       <div className="m-3 text-base text-subtext1">
         <p>
@@ -157,9 +228,9 @@ const Terminal = () => {
           <span className="text-[#F6F6A2]">c</span>
           <span className="text-[#DAF6A2]">o</span>
           <span className="text-[#BEF6A2]">m</span>
-          <span className="text-[#A2F6A2]">e </span>
+          <span className="text-[#A2F6A2]">e&nbsp;</span>
           <span className="text-[#A2F6BE]">t</span>
-          <span className="text-[#A2F6DA]">o </span>
+          <span className="text-[#A2F6DA]">o&nbsp;</span>
           <span className="text-[#A2F6F6]">M</span>
           <span className="text-[#A2DAF6]">a</span>
           <span className="text-[#A2BEF6]">r</span>
@@ -172,8 +243,8 @@ const Terminal = () => {
         </p>
         <br />
         <p>
-          Type '<span className="text-green">help</span>' for available
-          commands.
+          Type&nbsp;'<span className="text-green">help</span>'&nbsp;for
+          available commands.
         </p>
         <br />
         <p>
@@ -193,11 +264,13 @@ const Terminal = () => {
           ))}
         </p>
         <form onSubmit={onSubmit}>
-          <span className="pr-[9.5px] text-sapphire">&gt;</span>
+          <span className="pr-[9.6px] text-sapphire">&gt;</span>
           <input
             autoFocus
+            ref={inputElement}
             name="input"
             id="input"
+            type="text"
             value={input}
             onChange={onChange}
             aria-label="input"

@@ -1,0 +1,28 @@
+---
+import clsx from "clsx";
+
+export interface Props {
+  active: number;
+}
+
+const { active } = Astro.props as Props;
+---
+
+<a
+  class={clsx(
+    "py-[5px] px-[12px]",
+    active === 1 ? "bg-mauve text-crust rounded-2xl" : ""
+  )}>一</a
+>
+<a
+  class={clsx(
+    "py-[5px] px-[12px]",
+    active === 2 ? "bg-mauve text-crust rounded-2xl" : ""
+  )}>二</a
+>
+<a
+  class={clsx(
+    "py-[5px] px-[12px]",
+    active === 3 ? "bg-mauve text-crust rounded-2xl" : ""
+  )}>三</a
+>

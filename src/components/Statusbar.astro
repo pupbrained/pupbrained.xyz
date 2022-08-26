@@ -3,20 +3,25 @@ import Wifi from "./Wifi";
 import Spotify from "./Spotify";
 import Date from "./Date";
 import Time from "./Time";
+import Workspace from "./Workspace.astro";
+
+export interface Props {
+  active: number;
+}
+
+const { active } = Astro.props as Props;
 ---
 
 <div class="flex items-center justify-center m-auto w-screen">
   <div
-    class="bar text-sm h-[35px] inline-flex rounded-2xl items-center justify-between bg-[#181825]"
+    class="text-sm h-[35px] inline-flex rounded-2xl items-center justify-between bg-mantle"
   >
     <div
-      class="left flex items-center px-6 gap-6 rounded-l-2xl text-purple bg-[#1e1e2e] h-full"
+      class="flex items-center px-6 gap-2 rounded-l-2xl text-purple bg-base h-full"
     >
-      <a>一</a>
-      <a>二</a>
-      <a>三</a>
+      <Workspace active={active} />
     </div>
-    <div class="right flex gap-4">
+    <div class="flex gap-4">
       <Wifi client:load />
       <Spotify client:load />
       <Date client:load />
