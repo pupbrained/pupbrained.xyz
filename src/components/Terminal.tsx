@@ -2,6 +2,7 @@ import clsx from 'clsx'
 import * as React from 'react'
 import { useEffect, useRef, useState } from 'react'
 import { animateScroll as scroll } from 'react-scroll'
+import { RandomReveal } from 'react-random-reveal'
 
 const Terminal = () => {
   const validCommandValues = [
@@ -99,6 +100,30 @@ const Terminal = () => {
     ])
   }
 
+  const makeContactLink = (
+    icon: string,
+    iconColor: string,
+    name: string,
+    username: string,
+    link: string
+  ) => {
+    const characterSet = ['&', '#', '*', '+', '%', '?', '£', '@', '§', '$']
+    return (
+      <p>
+        <span className={`mr-[0.3rem] ${iconColor}`}>{icon}</span>:&nbsp;
+        <a title={`A ${name} link pointing to ${username}`} href={link}>
+          <RandomReveal
+            isPlaying
+            duration={1}
+            updateInterval={0.04}
+            characterSet={characterSet}
+            characters={username}
+          ></RandomReveal>
+        </a>
+      </p>
+    )
+  }
+
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value)
   }
@@ -190,6 +215,39 @@ const Terminal = () => {
         {
           name: input,
           value: <p>the guy</p>,
+        },
+      ])
+      break
+    case 'contact':
+      setCommands([
+        ...commands,
+        {
+          name: input,
+          value: (
+            <>
+              {makeContactLink(
+                '暑',
+                'text-[#1d9bf0]',
+                'Twitter',
+                'pupbrained',
+                'https://twitter.com/pupbrained'
+              )}
+              {makeContactLink(
+                'ﭮ',
+                'text-[#5865f2]',
+                'Discord',
+                'mard#1999',
+                'https://discord.com/users/449287407142043658'
+              )}
+              {makeContactLink(
+                '',
+                'text-[#171515]',
+                'Github',
+                'marsupialgutz',
+                'https://github.com/marsupialgutz'
+              )}
+            </>
+          ),
         },
       ])
       break
