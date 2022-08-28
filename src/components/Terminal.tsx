@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import { animateScroll as scroll } from 'react-scroll'
 import { RandomReveal } from 'react-random-reveal'
 
-const Terminal = () => {
+export default function Terminal() {
   const validCommandValues = [
     'help',
     'clear',
@@ -105,18 +105,23 @@ const Terminal = () => {
     iconColor: string,
     name: string,
     username: string,
-    link: string
+    link: string,
+    className: string
   ) => {
-    const characterSet = ['&', '#', '*', '+', '%', '?', '£', '@', '§', '$']
     return (
       <p>
-        <span className={`mr-[0.3rem] ${iconColor}`}>{icon}</span>:&nbsp;
-        <a title={`A ${name} link pointing to ${username}`} href={link}>
+        <span className={`${iconColor} font-hack`}>{icon}</span>
+        :&nbsp;
+        <a
+          title={`A ${name} link pointing to ${username}`}
+          href={link}
+          className={className}
+        >
           <RandomReveal
             isPlaying
             duration={1}
             updateInterval={0.04}
-            characterSet={characterSet}
+            characterSet={['&', '#', '*', '+', '%', '?', '£', '@', '§', '$']}
             characters={username}
           ></RandomReveal>
         </a>
@@ -130,6 +135,19 @@ const Terminal = () => {
 
   const onSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault()
+
+    const randomAnim = [
+      'allsides allsides-1 hover:allsides-1to3-hover',
+      'allsides allsides-2 hover:allsides-1to3-hover',
+      'allsides allsides-3 hover:allsides-1to3-hover',
+      'allsides allsides-4 allsides-4to5 hover:allsides-4to6-hover',
+      'allsides allsides-5 allsides-4to5 hover:allsides-4to6-hover',
+      'allsides allsides-6 hover:allsides-4to6-hover',
+    ]
+
+    const getRandom = (arr: string[]) => {
+      return arr[Math.floor(Math.random() * arr.length)]
+    }
 
     switch (input.toLowerCase()) {
     case 'help':
@@ -230,21 +248,24 @@ const Terminal = () => {
                 'text-[#1d9bf0]',
                 'Twitter',
                 'pupbrained',
-                'https://twitter.com/pupbrained'
+                'https://twitter.com/pupbrained',
+                getRandom(randomAnim)
               )}
               {makeContactLink(
                 'ﭮ',
                 'text-[#5865f2]',
                 'Discord',
                 'mard#1999',
-                'https://discord.com/users/449287407142043658'
+                'https://discord.com/users/449287407142043658',
+                getRandom(randomAnim)
               )}
               {makeContactLink(
                 '',
                 'text-[#171515]',
                 'Github',
                 'marsupialgutz',
-                'https://github.com/marsupialgutz'
+                'https://github.com/marsupialgutz',
+                getRandom(randomAnim)
               )}
             </>
           ),
@@ -342,5 +363,3 @@ const Terminal = () => {
     </div>
   )
 }
-
-export default Terminal

@@ -1,4 +1,4 @@
-const Wifi = () => {
+export default function wifi() {
   const wifiNames = [
     'Mard-Fi',
     'GeekyIsGay',
@@ -26,5 +26,3 @@ const Wifi = () => {
     </div>
   )
 }
-
-export default Wifi

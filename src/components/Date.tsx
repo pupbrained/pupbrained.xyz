@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const DateModule = () => {
+export default function DateModule() {
   const [date, setDate] = useState(new Date())
 
   useEffect(() => {
@@ -17,5 +17,3 @@ const DateModule = () => {
     </div>
   )
 }
-
-export default DateModule

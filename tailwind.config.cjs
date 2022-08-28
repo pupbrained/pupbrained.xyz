@@ -1,5 +1,9 @@
+/* eslint-disable no-undef */
+/* eslint-disable @typescript-eslint/no-var-requires */
 /** @type {import('tailwindcss').Config} */
-// eslint-disable-next-line no-undef
+
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,svelte,ts,tsx,vue}'],
   theme: {
@@ -38,8 +42,64 @@ module.exports = {
     extend: {
       fontFamily: {
         jetbrains: ['JetBrainsMono Nerd Font'],
+        hack: ['Hack Nerd Font'],
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        '.allsides': {
+          backgroundSize: 'var(--d, 0) 1px, 1px var(--d, 0) !important',
+          backgroundRepeat: 'no-repeat !important',
+          transition: '0.5s !important',
+        },
+        '.allsides-4to5': {
+          transition: '0.5s, background-position 0s 0.5s !important',
+        },
+        '.allsides-1': {
+          background: `linear-gradient(currentColor 0 0) 100% 0,
+          linear-gradient(currentColor 0 0) 0 0,
+          linear-gradient(currentColor 0 0) 0 100%,
+          linear-gradient(currentColor 0 0) 100% 100%`,
+        },
+        '.allsides-2': {
+          background: `linear-gradient(currentColor 0 0) 0 0,
+          linear-gradient(currentColor 0 0) 0 0,
+          linear-gradient(currentColor 0 0) 100% 100%,
+          linear-gradient(currentColor 0 0) 100% 100%`,
+        },
+        '.allsides-3': {
+          background: `linear-gradient(currentColor 0 0) top,
+          linear-gradient(currentColor 0 0) left,
+          linear-gradient(currentColor 0 0) bottom,
+          linear-gradient(currentColor 0 0) right`,
+        },
+        '.allsides-4': {
+          background: `linear-gradient(currentColor 0 0) var(--p, 100%) 0,
+          linear-gradient(currentColor 0 0) 0 var(--d, 0),
+          linear-gradient(currentColor 0 0) var(--d, 0) 100%,
+          linear-gradient(currentColor 0 0) 100% var(--p, 100%)`,
+        },
+        '.allsides-5': {
+          background: `linear-gradient(currentColor 0 0) var(--d, 0) 0,
+          linear-gradient(currentColor 0 0) 0 var(--d, 0),
+          linear-gradient(currentColor 0 0) var(--p, 100%) 100%,
+          linear-gradient(currentColor 0 0) 100% var(--p, 100%)`,
+        },
+        '.allsides-6': {
+          background: `linear-gradient(currentColor 0 0) 0 0,
+          linear-gradient(currentColor 0 0) 0 0,
+          linear-gradient(currentColor 0 0) 0 100%,
+          linear-gradient(currentColor 0 0) 0 100%,
+          linear-gradient(currentColor 0 0) 100% 0,
+          linear-gradient(currentColor 0 0) 100% 0,
+          linear-gradient(currentColor 0 0) 100% 100%,
+          linear-gradient(currentColor 0 0) 100% 100%`,
+        },
+        '.allsides-1to3-hover': { '--d': '100% ' },
+        '.allsides-4to6-hover': { '--d': '100%', '--p': '0%' },
+      })
+    }),
+  ],
 }

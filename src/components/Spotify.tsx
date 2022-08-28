@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Marquee from 'react-fast-marquee'
 
-const Spotify = () => {
+export default function Spotify() {
   const [status, setStatus] = useState('Loading...')
 
   useEffect(() => {
@@ -39,5 +39,3 @@ const Spotify = () => {
     </div>
   )
 }
-
-export default Spotify

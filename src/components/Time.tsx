@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const Time = () => {
+export default function Time() {
   const [time, setTime] = useState(new Date())
 
   useEffect(() => {
@@ -21,5 +21,3 @@ const Time = () => {
     </div>
   )
 }
-
-export default Time
