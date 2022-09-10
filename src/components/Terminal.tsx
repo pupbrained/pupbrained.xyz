@@ -57,7 +57,7 @@ export default function Terminal() {
           <div className="inline-flex">
             <img
               title={`An image resembling ${name} in ASCII art`}
-              src={`src/img/${name.toLowerCase()}.png`}
+              src={`public/${name.toLowerCase()}.png`}
               className="w-[185px] h-[185px]"
             ></img>
             <div className="pl-3">
@@ -385,6 +385,7 @@ export default function Terminal() {
             value={input}
             onChange={onChange}
             aria-label="input"
+            autoComplete="off"
             className={clsx(
               'bg-transparent border-none outline-none w-[calc(100%-20px)] caret-subtext1',
               valid ? 'text-green' : 'text-red'
