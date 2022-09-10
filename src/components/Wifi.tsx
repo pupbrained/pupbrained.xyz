@@ -1,4 +1,4 @@
-export default function wifi() {
+export default function Wifi() {
   const wifiNames = [
     'Mard-Fi',
     'GeekyIsGay',
