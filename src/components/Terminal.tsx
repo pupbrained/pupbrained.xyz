@@ -327,10 +327,7 @@ export default function Terminal() {
   }, [input])
 
   return (
-    <div
-      id="term"
-      className="text-sm h-full w-full bg-basetranslucent rounded-2xl backdrop-blur-md overflow-scroll"
-    >
+    <div id="term" className="text-sm h-full w-full overflow-scroll">
       <div className="m-3 text-base text-subtext1">
         <p>
           <span className="text-[#F6A2A2]">W</span>
