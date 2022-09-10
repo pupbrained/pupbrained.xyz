@@ -252,6 +252,14 @@ export default function Terminal() {
                 getRandom(randomAnim)
               )}
               {makeContactLink(
+                '',
+                'text-[#0088cc]',
+                'Telegram',
+                'pupbrained',
+                'https://t.me/pupbrained',
+                getRandom(randomAnim)
+              )}
+              {makeContactLink(
                 'ﭮ',
                 'text-[#5865f2]',
                 'Discord',
@@ -265,6 +273,30 @@ export default function Terminal() {
                 'Github',
                 'marsupialgutz',
                 'https://github.com/marsupialgutz',
+                getRandom(randomAnim)
+              )}
+              {makeContactLink(
+                '戮',
+                'text-[#00c3e7]',
+                'Steam',
+                'marsupialgutz',
+                'https://steamcommunity.com/id/marsupialgutz',
+                getRandom(randomAnim)
+              )}
+              {makeContactLink(
+                '阮',
+                'text-[#1DB954]',
+                'Spotify',
+                'marsupialgutz',
+                'https://open.spotify.com/user/21hvrddjilwmxvx5aueqyamyy',
+                getRandom(randomAnim)
+              )}
+              {makeContactLink(
+                '',
+                'text-[#f25871]',
+                'Misskey',
+                'mars',
+                'https://mk.possums.xyz/@mars',
                 getRandom(randomAnim)
               )}
             </>
