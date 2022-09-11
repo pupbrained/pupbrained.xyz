@@ -24,15 +24,6 @@ export default function Workspace(props: {
       >
         二
       </a>
-      <a
-        onClick={() => props.setActive(3)}
-        className={clsx(
-          'py-[5px] px-[12px] cursor-pointer',
-          props.active === 3 ? 'bg-mauve text-crust rounded-2xl' : ''
-        )}
-      >
-        三
-      </a>
     </>
   )
 }

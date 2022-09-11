@@ -3,8 +3,15 @@ import * as React from 'react'
 import { useEffect, useRef, useState } from 'react'
 import { animateScroll as scroll } from 'react-scroll'
 import { RandomReveal } from 'react-random-reveal'
+import { motion } from 'framer-motion'
 
-export default function Terminal() {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export default function Terminal(props: {
+  commands: { name: string; value: React.ReactNode }[]
+  setCommands: React.Dispatch<
+    React.SetStateAction<{ name: string; value: React.ReactNode }[]>
+  >
+}) {
   const validCommandValues = [
     'help',
     'clear',
@@ -20,12 +27,6 @@ export default function Terminal() {
   const inputElement = useRef<HTMLInputElement>(null)
   const [input, setInput] = useState('')
   const [valid, setValid] = useState(false)
-  const [commands, setCommands] = useState<
-    {
-      name: string
-      value: React.ReactNode
-    }[]
-  >([])
 
   useEffect(() => {
     if (inputElement.current) {
@@ -49,8 +50,8 @@ export default function Terminal() {
     gender: string,
     favThing: string
   ) => {
-    setCommands([
-      ...commands,
+    props.setCommands([
+      ...props.commands,
       {
         name: input,
         value: (
@@ -151,8 +152,8 @@ export default function Terminal() {
 
     switch (input.toLowerCase()) {
     case 'help':
-      setCommands([
-        ...commands,
+      props.setCommands([
+        ...props.commands,
         {
           name: input,
           value: (
@@ -225,11 +226,11 @@ export default function Terminal() {
       )
       break
     case 'clear':
-      setCommands([])
+      props.setCommands([])
       break
     case 'geeky':
-      setCommands([
-        ...commands,
+      props.setCommands([
+        ...props.commands,
         {
           name: input,
           value: <p>the guy</p>,
@@ -237,8 +238,8 @@ export default function Terminal() {
       ])
       break
     case 'contact':
-      setCommands([
-        ...commands,
+      props.setCommands([
+        ...props.commands,
         {
           name: input,
           value: (
@@ -307,8 +308,8 @@ export default function Terminal() {
     case '':
       break
     default:
-      setCommands([
-        ...commands,
+      props.setCommands([
+        ...props.commands,
         {
           name: input,
           value: <p>Invalid command. Enter 'help' for available commands.</p>,
@@ -320,6 +321,8 @@ export default function Terminal() {
     setInput('')
 
     setTimeout(scrollToBottom, 0.000000000001) // this should not fucking work but ok
+
+    sessionStorage.setItem('props.commands', JSON.stringify(props.commands))
   }
 
   useEffect(() => {
@@ -328,7 +331,7 @@ export default function Terminal() {
 
   return (
     <div id="term" className="text-sm h-full w-full overflow-scroll">
-      <div className="m-3 text-base text-subtext1">
+      <div className="m-3 text-base !text-subtext1">
         <p>
           <span className="text-[#F6A2A2]">W</span>
           <span className="text-[#F6BEA2]">e</span>
@@ -356,7 +359,7 @@ export default function Terminal() {
         </p>
         <br />
         <p>
-          {commands.map((command) => (
+          {props.commands.map((command) => (
             <>
               <p>
                 <span className="text-sapphire">&gt;</span>{' '}
@@ -366,7 +369,9 @@ export default function Terminal() {
                   <span className="text-red">{command.name}</span>
                 )}
               </p>
-              {command.value}
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+                {command.value}
+              </motion.div>
               <br />
             </>
           ))}
