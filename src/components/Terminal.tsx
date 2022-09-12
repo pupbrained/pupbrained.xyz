@@ -344,7 +344,10 @@ export default function Terminal(props: {
   }, [input])
 
   return (
-    <div id="term" className="text-sm h-full w-full overflow-scroll">
+    <div
+      id="term"
+      className="text-sm h-full w-full overflow-scroll scrollbar-hide"
+    >
       <div className="m-3 text-base !text-subtext1">
         <p>
           <span className="text-[#F6A2A2]">W</span>

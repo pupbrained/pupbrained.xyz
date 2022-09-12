@@ -57,7 +57,7 @@ export default function Sona(props: {
           </motion.div>
         </AnimatePresence>
       </div>
-      <div className="m-5 col-span-2 text-right flex flex-col justify-between overflow-scroll">
+      <div className="m-5 col-span-2 text-right flex flex-col justify-between overflow-scroll scrollbar-hide">
         <div>
           <p className="text-3xl mb-2">
             <span className="text-[#f86262]">M</span>

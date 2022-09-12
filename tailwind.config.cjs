@@ -99,6 +99,13 @@ module.exports = {
         },
         '.allsides-1to3-hover': { '--d': '100% ' },
         '.allsides-4to6-hover': { '--d': '100%', '--p': '0%' },
+        '.scrollbar-hide': {
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+        },
+        '.scrollbar-hide::-webkit-scrollbar': {
+          display: 'none',
+        },
       })
     }),
   ],
