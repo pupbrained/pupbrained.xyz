@@ -7,11 +7,11 @@ import { motion } from 'framer-motion'
 //@ts-ignore
 import * as Random from 'react-random-reveal'
 const { RandomReveal } = Random
-import mars from '/public/mars.png'
-import herb from '/public/herb.png'
-import tofu from '/public/tofu.png'
-import river from '/public/river.png'
-import fen from '/public/fen.png'
+import mars from '/public/mars.webp'
+import herb from '/public/herb.webp'
+import tofu from '/public/tofu.webp'
+import river from '/public/river.webp'
+import fen from '/public/fen.webp'
 
 export default function Terminal(props: {
   commands: { name: string; value: React.ReactNode }[]
