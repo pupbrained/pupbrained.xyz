@@ -74,7 +74,7 @@ export default function Terminal(props: {
               <p>
                 ╭───
                 <span className="text-green">
-                  &nbsp;{name.toLowerCase()}@possums.xyz&nbsp;
+                  &nbsp;{name.toLowerCase()}@pupbrained.xyz&nbsp;
                 </span>
                 ─────────────────────╮
               </p>
