@@ -87,23 +87,29 @@ export default function Sona(props: {
         <div>
           <p className="text-3xl mb-2">Color Palette</p>
           <div className="flex flex-col gap-2 text-center">
-            <p className="text-lg bg-[#F4E1D3] text-crust rounded-lg inline-block px-3 py-1">
-              Fur (Light)
+            <p className="text-lg bg-[#F4E1D3] text-crust rounded-lg inline-flex px-3 py-1 justify-between">
+              <span>Fur (Light)</span>
+              <span>#F4E1D3</span>
             </p>
-            <p className="text-lg bg-[#BAA088] text-crust rounded-lg inline-block px-3 py-1">
-              Fur (Medium)
+            <p className="text-lg bg-[#BAA088] text-crust rounded-lg inline-flex px-3 py-1 justify-between">
+              <span>Fur (Medium)</span>
+              <span>#BAA088</span>
             </p>
-            <p className="text-lg bg-[#95785A] text-crust rounded-lg inline-block px-3 py-1">
-              Fur (Dark)
+            <p className="text-lg bg-[#95785A] text-crust rounded-lg inline-flex px-3 py-1 justify-between">
+              <span>Fur (Dark)</span>
+              <span>#95785A</span>
             </p>
-            <p className="text-lg bg-[#DE614D] text-crust rounded-lg inline-block px-3 py-1">
-              Left Eye
+            <p className="text-lg bg-[#DE614D] text-crust rounded-lg inline-flex px-3 py-1 justify-between">
+              <span>Left Eye</span>
+              <span>#DE614D</span>
             </p>
-            <p className="text-lg bg-[#EDE167] text-crust rounded-lg inline-block px-3 py-1">
-              Right Eye
+            <p className="text-lg bg-[#EDE167] text-crust rounded-lg inline-flex px-3 py-1 justify-between">
+              <span>Right Eye</span>
+              <span>#EDE167</span>
             </p>
-            <p className="text-lg bg-[#1E1D1B] text-subtext1 rounded-lg inline-block px-3 py-1">
-              Paw Pad
+            <p className="text-lg bg-[#1E1D1B] text-subtext1 rounded-lg inline-flex px-3 py-1 justify-between">
+              <span>Paw Pad</span>
+              <span>#1E1D1B</span>
             </p>
           </div>
         </div>
