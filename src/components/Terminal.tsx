@@ -7,6 +7,11 @@ import { motion } from 'framer-motion'
 //@ts-ignore
 import * as Random from 'react-random-reveal'
 const { RandomReveal } = Random
+import mars from '/public/mars.png'
+import herb from '/public/herb.png'
+import tofu from '/public/tofu.png'
+import river from '/public/river.png'
+import fen from '/public/fen.png'
 
 export default function Terminal(props: {
   commands: { name: string; value: React.ReactNode }[]
@@ -44,6 +49,7 @@ export default function Terminal(props: {
   }
 
   const makeAbout = (
+    idx: number,
     input: string,
     name: string,
     prns: string,
@@ -52,6 +58,7 @@ export default function Terminal(props: {
     gender: string,
     favThing: string
   ) => {
+    const imgs = [mars, herb, tofu, fen, river]
     props.setCommands([
       ...props.commands,
       {
@@ -60,7 +67,7 @@ export default function Terminal(props: {
           <div className="inline-flex">
             <img
               title={`An image resembling ${name} in ASCII art`}
-              src={`../public/${name.toLowerCase()}.png`}
+              src={imgs[idx]}
               className="w-[185px] h-[185px]"
             ></img>
             <div className="pl-3">
@@ -174,6 +181,7 @@ export default function Terminal(props: {
       break
     case 'mars':
       makeAbout(
+        0,
         input,
         'Mars',
         'they/pup/vi',
@@ -185,6 +193,7 @@ export default function Terminal(props: {
       break
     case 'herb':
       makeAbout(
+        1,
         input,
         'Herb',
         'they/it',
@@ -196,6 +205,7 @@ export default function Terminal(props: {
       break
     case 'tofu':
       makeAbout(
+        2,
         input,
         'Tofu',
         'they/he/it',
@@ -207,6 +217,7 @@ export default function Terminal(props: {
       break
     case 'fen':
       makeAbout(
+        3,
         input,
         'Fen',
         'they/them',
@@ -218,6 +229,7 @@ export default function Terminal(props: {
       break
     case 'river':
       makeAbout(
+        4,
         input,
         'River',
         'it/they',

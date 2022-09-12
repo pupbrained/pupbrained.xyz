@@ -1,24 +1,14 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import clsx from 'clsx'
+import img1 from '/public/1.png'
+import img2 from '/public/2.png'
+import img3 from '/public/3.png'
 
 export default function Sona(props: {
   selected: number
   setSelected: React.Dispatch<React.SetStateAction<number>>
 }) {
-  const images = [
-    {
-      src: '../public/1.png',
-      artist: '@rezcoles',
-    },
-    {
-      src: '../public/2.png',
-      artist: '@rabiespup',
-    },
-    {
-      src: '../public/3.png',
-      artist: '@accentaigu_tw',
-    },
-  ]
+  const images = ['@rezcoles', '@rabiespup', '@accentaigu_tw']
 
   return (
     <div className="grid grid-cols-9 text-subtext1 h-full">
@@ -37,7 +27,7 @@ export default function Sona(props: {
               type="radio"
               name="sona"
             />
-            {image.artist}
+            {image}
           </label>
         ))}
       </div>
@@ -51,14 +41,15 @@ export default function Sona(props: {
             className="h-full flex items-center justify-center"
           >
             {
-              images.map((img) => {
+              images.map((img, idx) => {
+                const imgs = [img1, img2, img3]
                 const image = new Image()
-                image.src = img.src
+                image.src = imgs[idx]
                 return (
                   <img
                     className="max-h-[80vh] rounded-lg"
-                    src={img.src}
-                    alt={img.artist}
+                    src={imgs[idx]}
+                    alt={img}
                   />
                 )
               })[props.selected]
