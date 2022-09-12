@@ -264,7 +264,7 @@ export default function Terminal(props: {
                 'ﭮ',
                 'text-[#5865f2]',
                 'Discord',
-                'mard#1999',
+                'pupbrained#1999',
                 'https://discord.com/users/449287407142043658',
                 getRandom(randomAnim)
               )}

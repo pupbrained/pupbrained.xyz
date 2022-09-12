@@ -13,7 +13,7 @@ export default function Window(props: { active: number }) {
   >([])
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence mode="wait" initial={false}>
       <div className="flex items-center justify-center h-full w-full overflow-hidden bg-basetranslucent rounded-2xl backdrop-blur-md">
         {
           {
