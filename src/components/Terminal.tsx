@@ -60,7 +60,7 @@ export default function Terminal(props: {
           <div className="inline-flex">
             <img
               title={`An image resembling ${name} in ASCII art`}
-              src={`public/${name.toLowerCase()}.png`}
+              src={`../public/${name.toLowerCase()}.png`}
               className="w-[185px] h-[185px]"
             ></img>
             <div className="pl-3">

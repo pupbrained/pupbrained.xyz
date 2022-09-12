@@ -7,15 +7,15 @@ export default function Sona(props: {
 }) {
   const images = [
     {
-      src: '/public/1.png',
+      src: '../public/1.png',
       artist: '@rezcoles',
     },
     {
-      src: '/public/2.png',
+      src: '../public/2.png',
       artist: '@rabiespup',
     },
     {
-      src: '/public/3.png',
+      src: '../public/3.png',
       artist: '@accentaigu_tw',
     },
   ]
