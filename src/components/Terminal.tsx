@@ -5,7 +5,8 @@ import { animateScroll as scroll } from 'react-scroll'
 import { motion } from 'framer-motion'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-import { RandomReveal } from 'react-random-reveal'
+import * as Random from 'react-random-reveal'
+const { RandomReveal } = Random
 
 export default function Terminal(props: {
   commands: { name: string; value: React.ReactNode }[]
