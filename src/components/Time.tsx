@@ -11,7 +11,7 @@ export default function Time() {
   }, [])
 
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-3 portrait:hidden">
       <p className="text-purple"> </p>
       <p className="pr-5 text-purple">
         {time

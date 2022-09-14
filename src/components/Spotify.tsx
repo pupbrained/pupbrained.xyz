@@ -17,7 +17,7 @@ export default function Spotify() {
   }, [])
 
   return (
-    <div className="flex items-center gap-3 text-green">
+    <div className="flex items-center gap-3 text-green portrait:pl-3">
       <p></p>
       {status != 'Loading...' &&
       status != 'No song playing' &&
