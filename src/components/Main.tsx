@@ -3,7 +3,7 @@ import Statusbar from './Statusbar'
 import Window from './Window'
 
 export default function Main() {
-  const [active, setActive] = useState(1)
+  const [active, setActive] = useState(2)
 
   return (
     <main className="font-jetbrains m-auto bg-[url('/wall.webp')] overflow-clip">

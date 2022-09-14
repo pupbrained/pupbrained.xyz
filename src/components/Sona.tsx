@@ -1,35 +1,116 @@
+import { Dispatch, SetStateAction, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import clsx from 'clsx'
+
 import img1 from '/public/1.webp'
 import img2 from '/public/2.webp'
 import img3 from '/public/3.webp'
 
 export default function Sona(props: {
   selected: number
-  setSelected: React.Dispatch<React.SetStateAction<number>>
+  setSelected: Dispatch<SetStateAction<number>>
 }) {
-  const images = ['@rezcoles', '@rabiespup', '@accentaigu_tw']
+  const authors = ['@rezcoles', '@rabiespup', '@accentaigu_tw']
+
+  const [isHovering, setIsHovering] = useState(false)
+
+  const handleMouseOver = () => {
+    setIsHovering(true)
+  }
+
+  const handleMouseOut = () => {
+    setIsHovering(false)
+  }
 
   return (
     <div className="grid grid-cols-9 text-subtext1 h-full">
-      <div className="m-5 flex gap-3 flex-col col-span-2">
-        {images.map((image, idx) => (
-          <label
-            className={clsx(
-              'p-4 border-subtext1 border-solid border-2 rounded-lg w-full hover:text-crust hover:bg-subtext1 justify-center align-center flex transition opacity cursor-pointer overflow-x-clip',
-              props.selected == idx ? 'bg-subtext1 text-crust' : 'text-subtext1'
-            )}
-          >
-            <input
-              defaultChecked
-              className="hidden"
-              onClick={() => props.setSelected(idx)}
-              type="radio"
-              name="sona"
-            />
-            {image}
-          </label>
-        ))}
+      <div className="m-5 flex gap-3 flex-col col-span-2 justify-between">
+        <div className="flex flex-col gap-3">
+          {authors.map((author, idx) => (
+            <label
+              className={clsx(
+                'p-4 border-subtext1 border-solid border-2 rounded-lg w-full hover:text-crust hover:bg-subtext1 justify-center align-center flex transition opacity cursor-pointer overflow-x-clip',
+                props.selected == idx
+                  ? 'bg-subtext1 text-crust'
+                  : 'text-subtext1'
+              )}
+            >
+              <input
+                defaultChecked
+                className="hidden"
+                onClick={() => props.setSelected(idx)}
+                type="radio"
+                name="sona"
+              />
+              {idx == props.selected ? (
+                <a
+                  href={`https://twitter.com/${author.substring(1)}`}
+                  className="hover:text-[#1d9bf0] transition opacity"
+                  onMouseOver={handleMouseOver}
+                  onMouseOut={handleMouseOut}
+                >
+                  {isHovering ? (
+                    <span>{author} 暑</span>
+                  ) : (
+                    <span>{author}</span>
+                  )}
+                </a>
+              ) : (
+                <p>{author}</p>
+              )}
+            </label>
+          ))}
+        </div>
+        <div>
+          <p className="text-3xl mb-2">Artpiece Requests</p>
+          <p>
+            If you'd like me to add your art to this page, just click&nbsp;
+            <a
+              href="mailto:mars@possums.xyz?subject=Add art to site"
+              className="bg-blue text-crust px-1 rounded-md"
+            >
+              here
+            </a>
+            &nbsp;to send me an email. Otherwise, you can send a feature request
+            to my&nbsp;
+            <a
+              href="https://github.com/marsupialgutz/possums.xyz-new/issues/new?assignees=marsupialgutz&labels=enhancement&template=new-artpiece-for-site.md&title=New+Artpiece"
+              className="bg-blue text-crust px-1 rounded-md"
+            >
+              GitHub Repo
+            </a>
+            &nbsp;or contact me on any platform in the&nbsp;
+            <span className="text-green">contact</span>&nbsp;command. If
+            possible, please send a transparent version of the art.
+          </p>
+        </div>
+        <div>
+          <p className="text-3xl mb-2">Extra Info</p>
+          <ul className="list-disc list-inside">
+            <li>
+              You are allowed to make any art of Marshall,&nbsp;
+              <span className="bg-red text-crust px-1 rounded-md font-bold">
+                as long as it is SFW!
+              </span>
+            </li>
+            <li>
+              You can take artistic liberties, but&nbsp;
+              <span className="bg-red text-crust px-1 rounded-md font-bold">
+                please approve them with me
+              </span>
+              &nbsp; beforehand.
+            </li>
+            <li>
+              I see Marshall as an inner version of myself, therefore I am very
+              protective of him. If you have any worries about something you
+              want to draw involving him,&nbsp;
+              <span className="bg-red text-crust px-1 rounded-md font-bold">
+                just ask me first!
+              </span>
+              &nbsp;I'll be glad to answer.
+            </li>
+          </ul>
+        </div>
       </div>
       <div className="col-span-5">
         <AnimatePresence initial={false} mode="wait">
@@ -41,7 +122,7 @@ export default function Sona(props: {
             className="h-full flex items-center justify-center"
           >
             {
-              images.map((img, idx) => {
+              authors.map((author, idx) => {
                 const imgs = [img1, img2, img3]
                 const image = new Image()
                 image.src = imgs[idx]
@@ -49,7 +130,7 @@ export default function Sona(props: {
                   <img
                     className="max-h-[80vh] rounded-lg"
                     src={imgs[idx]}
-                    alt={img}
+                    alt={author}
                   />
                 )
               })[props.selected]

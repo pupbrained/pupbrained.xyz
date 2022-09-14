@@ -1,12 +1,22 @@
-import clsx from 'clsx'
-import * as React from 'react'
-import { useEffect, useRef, useState } from 'react'
+import {
+  useState,
+  useEffect,
+  useRef,
+  ReactNode,
+  Dispatch,
+  SetStateAction,
+  SyntheticEvent,
+  ChangeEvent,
+} from 'react'
 import { animateScroll as scroll } from 'react-scroll'
 import { motion } from 'framer-motion'
+import clsx from 'clsx'
+
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
 import * as Random from 'react-random-reveal'
 const { RandomReveal } = Random
+
 import mars from '/public/mars.webp'
 import herb from '/public/herb.webp'
 import tofu from '/public/tofu.webp'
@@ -14,10 +24,8 @@ import river from '/public/river.webp'
 import fen from '/public/fen.webp'
 
 export default function Terminal(props: {
-  commands: { name: string; value: React.ReactNode }[]
-  setCommands: React.Dispatch<
-    React.SetStateAction<{ name: string; value: React.ReactNode }[]>
-  >
+  commands: { name: string; value: ReactNode }[]
+  setCommands: Dispatch<SetStateAction<{ name: string; value: ReactNode }[]>>
 }) {
   const validCommandValues = [
     'help',
@@ -139,11 +147,11 @@ export default function Terminal(props: {
     )
   }
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value)
   }
 
-  const onSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
+  const onSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     const randomAnim = [
@@ -169,7 +177,7 @@ export default function Terminal(props: {
             <p>
                 Available commands:{' '}
               {validCommandValues
-                .map<React.ReactNode>((command) => (
+                .map<ReactNode>((command) => (
                   <span className="text-green">{command}</span>
                 ))
                 .reduce((prev, curr) => [prev, ', ', curr])}

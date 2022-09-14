@@ -1,11 +1,12 @@
+import { Dispatch, SetStateAction } from 'react'
+import Workspace from './Workspace'
 import Spotify from './Spotify'
 import Date from './Date'
 import Time from './Time'
-import Workspace from './Workspace'
 
 export default function Statusbar(props: {
   active: number
-  setActive: React.Dispatch<React.SetStateAction<number>>
+  setActive: Dispatch<SetStateAction<number>>
 }) {
   return (
     <div className="flex items-center justify-center m-auto w-screen">

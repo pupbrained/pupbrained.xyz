@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useState } from 'react'
+import { ReactNode, useState } from 'react'
 import Sona from './Sona'
 import Terminal from './Terminal'
 
@@ -8,7 +8,7 @@ export default function Window(props: { active: number }) {
   const [commands, setCommands] = useState<
     {
       name: string
-      value: React.ReactNode
+      value: ReactNode
     }[]
   >([])
 

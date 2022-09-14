@@ -1,6 +1,8 @@
+import { Dispatch, SetStateAction } from 'react'
+
 export default function Workspace(props: {
   active: number
-  setActive: React.Dispatch<React.SetStateAction<number>>
+  setActive: Dispatch<SetStateAction<number>>
 }) {
   const icons = ['一', '二']
 
