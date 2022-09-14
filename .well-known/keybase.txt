@@ -1,0 +1,73 @@
+==================================================================
+https://keybase.io/marsupialgutz
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://pupbrained.xyz
+  * I am marsupialgutz (https://keybase.io/marsupialgutz) on keybase.
+  * I have a public key with fingerprint 6017 9CCF A9EC 4636 216B  F326 DB41 891A E0A1 ED4D
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101cbfd81cbed0da8629b7845cf24df958b80d7d6b7fd7c2e2822708d1a04ef3ca40a",
+      "fingerprint": "60179ccfa9ec4636216bf326db41891ae0a1ed4d",
+      "host": "keybase.io",
+      "key_id": "db41891ae0a1ed4d",
+      "kid": "0101cbfd81cbed0da8629b7845cf24df958b80d7d6b7fd7c2e2822708d1a04ef3ca40a",
+      "uid": "7ad88d8e5cf5850a40ec62dfb70f0719",
+      "username": "marsupialgutz"
+    },
+    "service": {
+      "hostname": "pupbrained.xyz",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1663117666,
+  "expire_in": 157680000,
+  "prev": "c71c221f10e7ff85bf661e02c1d186459225f0d3725a5ba4118325e680c98af5",
+  "seqno": 21,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owJ4nK2SbVBUVRjHF5HAXTBiAN+LvVgjttC5d/e+7JrxUjDYpAzSC47Qcu895y6X
+l93b3l0QEIWx0dBhxAaFDBSSGGBM1GxQHGiGoU0kIKJQ3oShdKQE0k2tGK27jH7r
+Y+fDOXOe5///nec881QEeKvUXmOxZaun6me3evXOcCpeGyEWYZwNFmCmIiwbLR4o
+ByLZYc4WIWbCAA5wnhMgo+wIAsgyFGHkaMZA8gJhgIKRZDgGQBpSHC1AmicQwRAE
+DRiIs8CABD3PGgCL6TBBtFqQXbKLVoeCpQBOG3leYI2IN1B6isApTtATFOQMOGPE
+WQRYHEEDVIyZNtnjUIrjWBlFiTYlplzMi+X9h/5/rtu5iKNZyDCQQYqbZEig5BBP
+EVDgaCAAGjd6hDKyW9lcpKhzWbvslEQ2x+J0FGLFOkxJ5Yk88nTX850nMskpcXZW
+tCIYtaugUEFIdpvDxttylFymwyHJJo/XUSB5xPmIMz/BmDnRCpV2Ko48ZJdFmxUz
+4YqSd4geLk5RehynKYrSYWiXJNqRWfQoSJpigLI876A8BZnB0zhPELiAA0QLAkNy
+AkXhCBA8DnGGMpBGgiAFAPU0QbIkxxpwnNETJFIwvJFhBRLz/OwDqw0zEbhSKGtR
+oLJosbIOpx1hxeqyJfqlKi+1al2odmnGipqB5jsJlDbb/dLTGfRZ4hlAlXpZ4NMI
+43r2MeX+rrhn4ffLKf1vwYWGkZFlbExtdk/prWtO7ysLuaCuvvTXe9W9QVPde9zY
+TE/69fS24eAH/n4lWFS/5vnpJCHu2PHwc48ig73dO0/tbU9TnfeZS1meenJcM5ij
+qlYNpRz4JXpWU759zz8T6860XT1d8kpCyAX6+L5Rd/i49E7XoSDGP34lramyRMQk
+3dzsdyfWDWOtG4B7Mj5258UP59bnTVNvaqqTXz/U92fqC/pjVWGnP5NuJHdoD2uz
+vwh+beDSu48nQnzT+LCDAUVtf/s+SBxrnSXB8ujGXOClbvup/GFWnHtox6ism9S6
+Zv7Yz4ZE7vucP9FV157fXJWYWPsxcJQQv/UF/XB2YaQ9zj69xbo5XSp/+a7d9qjv
+1JTlxeCtt28e/ETf8Sry62Qvgcl5X4M2OmlueKx+dcHAgjq2puKo6duvjbLux1Wp
+maFJz2WMd286cuXs0arva2/HjGTFd20Y39ifONvv6ty00R/KfoHT1F5XVKt6f0tl
+elrCypPYGZg/1GeL/+vwvH5VxTlzwNq5h+fDQmuOsGtu3F0xO9TYlOmKaKJ2B90z
+l3mv/zkmudl1ff5+7WWqocan8r0Lt5LvV56I1r2/4+3Wwu29lpzOQfnicELj2umO
+iSyfAtPVpqIvv1qTYHij9Nq2ht2jz2yrA4ERmvCe6PGPPnVHthQNbun+puVfhDXQ
+MQ==
+=SQBz
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/marsupialgutz
+
+==================================================================
