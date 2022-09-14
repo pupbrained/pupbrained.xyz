@@ -71,3 +71,90 @@ appending to this document.
 View my publicly-auditable identity here: https://keybase.io/marsupialgutz
 
 ==================================================================
+
+==================================================================
+https://keybase.io/marsupialgutz
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://possums.xyz
+  * I am marsupialgutz (https://keybase.io/marsupialgutz) on keybase.
+  * I have a public key with fingerprint 6017 9CCF A9EC 4636 216B  F326 DB41 891A E0A1 ED4D
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101cbfd81cbed0da8629b7845cf24df958b80d7d6b7fd7c2e2822708d1a04ef3ca40a",
+      "fingerprint": "60179ccfa9ec4636216bf326db41891ae0a1ed4d",
+      "host": "keybase.io",
+      "key_id": "db41891ae0a1ed4d",
+      "kid": "0101cbfd81cbed0da8629b7845cf24df958b80d7d6b7fd7c2e2822708d1a04ef3ca40a",
+      "uid": "7ad88d8e5cf5850a40ec62dfb70f0719",
+      "username": "marsupialgutz"
+    },
+    "merkle_root": {
+      "ctime": 1663117984,
+      "hash_meta": "07bd797d1341adb3bb1fed4914b2ae1dd3fc5267095b11e4e83568be7f1ec143",
+      "seqno": 23190840
+    },
+    "revoke": {
+      "sig_ids": [
+        "9315c8a990c3f2bbbe0c7c912bbc5d0601367a7fc2d0a97f8b3a28680399a9ee0f"
+      ]
+    },
+    "service": {
+      "hostname": "possums.xyz",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1663117990,
+  "expire_in": 157680000,
+  "prev": "d47dd0024fd7ab90e5548b9598c36117c0b837b919415e70551fe1131fb9f119",
+  "seqno": 22,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owJ4nK1TbVAVVRgGNMk7ORCWGsokmyIq6Tn7dXYvYl5GzBkHbSyMweCyZ89ZuFzu
+3evdexFByimHkdABwoEa1LAy08LP/MwCqSxkyDLzA8t0HCGz6ENEG8boLKN/mn62
+P3bPnvO8z/uc5zmndsyICEfkRVdV/OWtv2ZGdl7HEXrijJ3lHDbJKs5Zznnp8IcW
+E2qF3F4P4ZwcgADq2CAKe1MCiKbIvIqRIkq6wYvEUCUFK4AgImNkEKTzlFd4HgGF
+QA2I1BB0TQQal8IZHn8BDQaCHn+I0coAIlXXDU2luigLMg9lbAi8TLAIFRVqFGiQ
+EpGwwkLTsiuYOKxZdJbHZHPsxz0s7z/w/7Pu8DAd0oiiEIWyakmRAFujuswTAyNg
+AARVG2jRoF/zUYb2aUErHPBoxQXhUBlXkcL5aNBbTN1B0wzZDushj42DsixA5oMi
+sl1qVqHbR0OarR1hglREoCBCjWABY2iwzalQxLxGISGCoUu8jIAqYQipSBVBkhVM
+kQGpDkWBibHoCr/JOXkBqkARAZMQpCWml9rdLU8BM8/inG2rl3OqACVd0VQV6ILB
+Y4wp0JGuQjbUJQJYToKMNGToPAGaigwFCxqvyAoQVJWFR4HB5VbY/YIlHn2Y3s7r
+ng8B07LCPmtW6aoypikQNEOmbhazhcJQKGA5bWdCqwI2ciXF7nscbuzxE3ZYWEUJ
+DVoe08+cYsh/maaCFI6WBjxB6vbYCAkxUeyx+9AS+2iIiBAAeJHFq2EVUEkSFaxK
+qqILMmPQAVYEhFWoilCiCEgScxlCARpYNeBwpPdd5JlOrYBxMuv8WigcpFyFoypK
+GBkR6YhIGJc4Mn/8plM7flkgJ3pvJt2/YA9E2bcrwjE69v5M+q2YoSXJi+I6W9Jy
+E921Sy/UdI7vccSbbS8Qr/O9TUZkj3/B5qRtH087Mvur2zFpQ/nR1SefRkVvlrRu
+SR+49ul3P2c+tItPGdXUVJqx8YkN4e67UwZPbNl3pMt1LXbO6fXLq6eVt0y4nZV7
+92p5quxM6OxLVufXfiFtOJz0+JfH4i5Wx+4lpd/X/f1GYdvSmW17Nx+PGld6p2VO
+/s6uAu+iCcvcKwaKFp79a8vld89t7aneU/XsyaGjVwfnPRqfVrhrRfS16R99uLrl
+5NT983qfdwxaZfhE3PGXScPY7a0dXdM7xKQRZfmv/LZ2/QcNOYtnZX2yNltdmflZ
+zdWoSZV7mstqXu/Lru7trtxw5lZx3T5+aMry+t0JvbHrNmbV5v/gHl0+oevJxs+L
+6iplp+tK/o9xk/Pmd7QefaYq+1yH40ZO//lRqa1LU78Z21y/5uvjvdrDbxf1PZUQ
+TkuDzdrElMa9rovC7AN/luUsvB7X0be/v911GM3t3/ETvBnT8Ptrkx679ci03rXv
+d19qjFwyptInTsxzX69rfys58dT8Fx2HXZWlz53tyd1ZrqEmsNH1UnTMpMKK/ktx
+mQvTzrd/m3fDNTmjf2Duod0ZN3qgglLlA76unPhXo7b3v3Owfk22MlVJhtGXFy9L
+P5Bx6OBtZ1V7cve6K2PP4vqZM5p7co89OJjnOvPHQF5TVs16/s4ceCd924XTI/8B
+aPcQTQ==
+=wgA2
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/marsupialgutz
+
+==================================================================
