@@ -39,6 +39,19 @@ export default function Terminal(props: {
     'geeky',
   ]
 
+  const randomAnim = [
+    'allsides allsides-1 hover:allsides-1to3-hover',
+    'allsides allsides-2 hover:allsides-1to3-hover',
+    'allsides allsides-3 hover:allsides-1to3-hover',
+    'allsides allsides-4 allsides-4to5 hover:allsides-4to6-hover',
+    'allsides allsides-5 allsides-4to5 hover:allsides-4to6-hover',
+    'allsides allsides-6 hover:allsides-4to6-hover',
+  ]
+
+  const getRandom = (arr: string[]) => {
+    return arr[Math.floor(Math.random() * arr.length)]
+  }
+
   const inputElement = useRef<HTMLInputElement>(null)
   const [input, setInput] = useState('')
   const [valid, setValid] = useState(false)
@@ -171,19 +184,6 @@ export default function Terminal(props: {
 
   const onSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault()
-
-    const randomAnim = [
-      'allsides allsides-1 hover:allsides-1to3-hover',
-      'allsides allsides-2 hover:allsides-1to3-hover',
-      'allsides allsides-3 hover:allsides-1to3-hover',
-      'allsides allsides-4 allsides-4to5 hover:allsides-4to6-hover',
-      'allsides allsides-5 allsides-4to5 hover:allsides-4to6-hover',
-      'allsides allsides-6 hover:allsides-4to6-hover',
-    ]
-
-    const getRandom = (arr: string[]) => {
-      return arr[Math.floor(Math.random() * arr.length)]
-    }
 
     switch (input.toLowerCase()) {
     case 'help':
@@ -397,8 +397,9 @@ export default function Terminal(props: {
         </p>
         <br />
         <p>
-          Type&nbsp;'<span className="text-green">help</span>'&nbsp;for
-          available commands.
+          Type&nbsp;'
+          <span className="text-green">help</span>
+          '&nbsp;for available commands.
         </p>
         <br />
         <p>

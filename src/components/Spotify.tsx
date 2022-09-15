@@ -6,9 +6,7 @@ export default function Spotify() {
 
   useEffect(() => {
     async function update() {
-      const val = await (
-        await fetch('https://possums.xyz/nowplaying/song')
-      ).json()
+      const val = await (await fetch('https://music.possums.xyz')).json()
       setStatus(val)
     }
     update()
@@ -31,7 +29,7 @@ export default function Spotify() {
           </Marquee>
         ) : (
           <p>
-            {status != 'Loading...' && status != 'No song playing'
+            {status != 'Loading...' && status != 'N/A'
               ? status.substring(0, status.length - 2)
               : status}
           </p>
