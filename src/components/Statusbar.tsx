@@ -15,7 +15,7 @@ export default function Statusbar(props: {
           <Workspace active={props.active} setActive={props.setActive} />
         </div>
         <div className="flex gap-4">
-          <div className="flex items-center gap-4 pl-5 portrait:hidden">
+          <div className="items-center gap-4 pl-5 hidden sm:flex">
             <p className="text-yellow"> </p>
             <p className="text-yellow">Mard-Fi</p>
           </div>

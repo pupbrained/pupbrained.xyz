@@ -76,18 +76,10 @@ export default function Terminal(props: {
             <img
               title={`An image resembling ${name} in ASCII art`}
               src={imgs[idx]}
-              className="w-[185px] h-[185px] portrait:hidden"
+              className="w-[185px] h-[185px] hidden sm:block"
             ></img>
-            <div className="pl-3 portrait:pl-0">
+            <div className="pl-0 font-hack sm:pl-3 sm:font-jetbrains">
               {name.toLowerCase() === 'river' ? (
-                <p>
-                  ╭───
-                  <span className="text-green">
-                    &nbsp;{name.toLowerCase()}@pupbrained.xyz&nbsp;
-                  </span>
-                  ──────╮
-                </p>
-              ) : name.toLowerCase() === 'fen' ? (
                 <p>
                   ╭───
                   <span className="text-green">
@@ -95,13 +87,21 @@ export default function Terminal(props: {
                   </span>
                   ────────╮
                 </p>
+              ) : name.toLowerCase() === 'fen' ? (
+                <p>
+                  ╭───
+                  <span className="text-green">
+                    &nbsp;{name.toLowerCase()}@pupbrained.xyz&nbsp;
+                  </span>
+                  ──────────╮
+                </p>
               ) : (
                 <p>
                   ╭───
                   <span className="text-green">
                     &nbsp;{name.toLowerCase()}@pupbrained.xyz&nbsp;
                   </span>
-                  ───────╮
+                  ─────────╮
                 </p>
               )}
               <p>
@@ -128,7 +128,7 @@ export default function Terminal(props: {
                 &nbsp;&nbsp;<span className="text-purple"></span>
                 &nbsp;&nbsp;{favThing}
               </p>
-              <p>╰───────────────────────────────╯</p>
+              <p>╰─────────────────────────────────╯</p>
             </div>
           </div>
         ),
