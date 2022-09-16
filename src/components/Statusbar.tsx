@@ -19,7 +19,7 @@ export default function Statusbar(props: {
         <div className="flex gap-4">
           <div className="items-center gap-4 pl-5 hidden sm:flex">
             <p className="text-yellow"> </p>
-            <p className="text-yellow">Mard-Fi</p>
+            <p className="text-yellow">MardFi</p>
           </div>
           <Spotify
             isMobileSmall={props.isMobileSmall}
