@@ -12,7 +12,7 @@ yarn-error.log*
 pnpm-debug.log*
 
 # environment variables
-.env
+.envrc
 .env.production
 
 # macOS-specific files
@@ -20,6 +20,3 @@ pnpm-debug.log*
 
 # VS Code Files
 .vscode
-
-# Don't worry about this one
-src/components/asdfkusfgj.js
