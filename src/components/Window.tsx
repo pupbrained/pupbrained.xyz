@@ -3,7 +3,7 @@ import { ReactNode, useState } from 'react'
 import Sona from './Sona'
 import Terminal from './Terminal'
 
-export default function Window(props: { active: number }) {
+export default function Window(props: { active: number; isMobile: boolean }) {
   const [selected, setSelected] = useState(0)
   const [commands, setCommands] = useState<
     {
@@ -36,7 +36,11 @@ export default function Window(props: { active: number }) {
                 exit={{ opacity: 0 }}
                 className="h-full w-full"
               >
-                <Sona selected={selected} setSelected={setSelected} />
+                <Sona
+                  selected={selected}
+                  setSelected={setSelected}
+                  isMobile={props.isMobile}
+                />
               </motion.div>
             ),
           }[props.active]

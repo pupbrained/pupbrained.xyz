@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Marquee from 'react-fast-marquee'
 
-export default function Spotify() {
+export default function Spotify(props: { isMobile: boolean }) {
   const [status, setStatus] = useState('Loading...')
 
   useEffect(() => {
@@ -14,14 +14,16 @@ export default function Spotify() {
     return () => clearInterval(interval)
   }, [])
 
+  const length = props.isMobile ? 20 : 30
+
   return (
     <div className="flex items-center gap-3 text-green pl-3 sm:pl-0">
       <p></p>
       {status != 'Loading...' &&
       status != 'No song playing' &&
-      status.length > 30 ? (
+      status.length > length ? (
           <Marquee
-            className="bottom-[1px] max-w-[150px]"
+            className="bottom-[1px] max-w-[100px] sm:max-w-[150px]"
             gradient={false}
             speed={60}
           >

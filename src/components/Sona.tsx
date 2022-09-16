@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import clsx from 'clsx'
 
@@ -9,29 +9,8 @@ import img3 from '/public/3.webp'
 export default function Sona(props: {
   selected: number
   setSelected: Dispatch<SetStateAction<number>>
+  isMobile: boolean
 }) {
-  const useWindowSize = () => {
-    const [windowSize, setWindowSize] = useState(
-      typeof window != 'undefined' && window.innerWidth
-    )
-
-    function changeWindowSize() {
-      setWindowSize(window.innerWidth)
-    }
-
-    useEffect(() => {
-      window.addEventListener('resize', changeWindowSize)
-
-      return () => {
-        window.removeEventListener('resize', changeWindowSize)
-      }
-    }, [])
-
-    return windowSize
-  }
-
-  const isMobile = useWindowSize() < 1280
-
   const authors = ['@rezcoles', '@rabiespup', '@accentaigu_tw']
 
   const [isHovering, setIsHovering] = useState(false)
@@ -46,7 +25,7 @@ export default function Sona(props: {
 
   return (
     <div className="flex flex-col xl:grid xl:grid-cols-9 text-subtext1 h-full overflow-scroll">
-      {isMobile ? (
+      {props.isMobile ? (
         <>
           <div className="order-2 xl:order-[0] flex flex-col gap-3 m-5">
             {authors.map((author, idx) => (
@@ -253,7 +232,7 @@ export default function Sona(props: {
           </motion.div>
         </AnimatePresence>
       </div>
-      {isMobile ? (
+      {props.isMobile ? (
         <>
           <div className="text-center order-[-1]">
             <p className="text-5xl mb-2 mt-5">
