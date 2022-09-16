@@ -7,7 +7,8 @@ import Time from './Time'
 export default function Statusbar(props: {
   active: number
   setActive: Dispatch<SetStateAction<number>>
-  isMobile: boolean
+  isMobileSmall: boolean
+  isMobileMed: boolean
 }) {
   return (
     <div className="flex items-center justify-center m-auto w-full">
@@ -20,7 +21,10 @@ export default function Statusbar(props: {
             <p className="text-yellow"> </p>
             <p className="text-yellow">Mard-Fi</p>
           </div>
-          <Spotify isMobile={props.isMobile} />
+          <Spotify
+            isMobileSmall={props.isMobileSmall}
+            isMobileMed={props.isMobileMed}
+          />
           <Date />
           <Time />
         </div>

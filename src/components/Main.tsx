@@ -25,13 +25,20 @@ export default function Main() {
     return windowSize
   }
 
-  const isMobile = useWindowSize() < 1280
+  const large = useWindowSize() < 1280
+  const medium = useWindowSize() < 768
+  const small = useWindowSize() < 640
 
   return (
     <main className="font-jetbrains bg-[url('/wall.webp')] h-full w-full p-5">
       <div className="gap-5 w-full h-full flex flex-col">
-        <Statusbar active={active} setActive={setActive} isMobile={isMobile} />
-        <Window active={active} isMobile={isMobile} />
+        <Statusbar
+          active={active}
+          setActive={setActive}
+          isMobileSmall={small}
+          isMobileMed={medium}
+        />
+        <Window active={active} isMobile={large} />
       </div>
     </main>
   )

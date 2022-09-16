@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react'
 import Marquee from 'react-fast-marquee'
 
-export default function Spotify(props: { isMobile: boolean }) {
+export default function Spotify(props: {
+  isMobileSmall: boolean
+  isMobileMed: boolean
+}) {
   const [status, setStatus] = useState('Loading...')
 
   useEffect(() => {
@@ -14,7 +17,7 @@ export default function Spotify(props: { isMobile: boolean }) {
     return () => clearInterval(interval)
   }, [])
 
-  const length = props.isMobile ? 15 : 30
+  const length = props.isMobileSmall ? 15 : props.isMobileMed ? 18 : 30
 
   return (
     <div className="flex items-center gap-3 text-green pl-3 sm:pl-0">
