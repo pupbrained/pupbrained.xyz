@@ -14,7 +14,7 @@ export default function Spotify(props: { isMobile: boolean }) {
     return () => clearInterval(interval)
   }, [])
 
-  const length = props.isMobile ? 20 : 30
+  const length = props.isMobile ? 15 : 30
 
   return (
     <div className="flex items-center gap-3 text-green pl-3 sm:pl-0">
