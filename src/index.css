@@ -15,5 +15,6 @@
 html,
 body,
 #root {
+  background-color: #24253d;
   height: 100%;
 }
