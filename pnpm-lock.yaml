@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/babel__core': ^7.1.19
+  '@types/node': ^18.7.18
   '@types/react': ^18.0.17
   '@types/react-dom': ^18.0.6
   '@types/react-scroll': ^1.8.4
@@ -30,6 +31,7 @@ dependencies:
 
 devDependencies:
   '@types/babel__core': 7.1.19
+  '@types/node': 18.7.18
   '@types/react': 18.0.20
   '@types/react-dom': 18.0.6
   '@types/react-scroll': 1.8.4
@@ -475,6 +477,10 @@ packages:
     resolution: {integrity: sha512-FSdLaZh2UxaMuLp9lixWaHq/golWTRWOnRsAXzDTDSDOQLuZb1nsdCt6pJSPWSEQt2eFZ2YVk3oYhn+1kLMeMA==}
     dependencies:
       '@babel/types': 7.19.0
+    dev: true
+
+  /@types/node/18.7.18:
+    resolution: {integrity: sha512-m+6nTEOadJZuTPkKR/SYK3A2d7FZrgElol9UP1Kae90VVU4a6mxnPuLiIW1m4Cq4gZ/nWb9GrdVXJCoCazDAbg==}
     dev: true
 
   /@types/prop-types/15.7.5:
