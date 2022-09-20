@@ -7,21 +7,21 @@ export default function App() {
   const [active, setActive] = useState(1);
 
   const useWindowSize = () => {
-  const [windowSize, setWindowSize] = useState(window.innerWidth)
+    const [windowSize, setWindowSize] = useState(window.innerWidth);
 
-  useEffect(() => {
-    const onWindowResize = () => {
-      setWindowSize(window.innerWidth)
-    }
+    useEffect(() => {
+      const onWindowResize = () => {
+        setWindowSize(window.innerWidth);
+      };
 
-    window.addEventListener("resize", onWindowResize)
-    onWindowResize()
+      window.addEventListener("resize", onWindowResize);
+      onWindowResize();
 
-    return () => window.removeEventListener("resize", onWindowResize)
-  }, [])
+      return () => window.removeEventListener("resize", onWindowResize);
+    }, []);
 
-  return windowSize
-}
+    return windowSize;
+  };
 
   const large = useWindowSize() < 1280;
   const medium = useWindowSize() < 768;

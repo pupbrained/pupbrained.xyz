@@ -403,17 +403,30 @@ export default function Terminal(props: {
           '&nbsp;for available commands.
         </p>
         <br />
-        <a href="https://webring.yesterweb.org/noJS/index.php?d=prev&url=https://possums.xyz/">
-          Previous -
-        </a>
-        &nbsp;
-        <a href="https://webring.yesterweb.org/noJS/index.php?d=rand&url=https://possums.xyz/">
-          Random -
-        </a>
-        &nbsp;
-        <a href="https://webring.yesterweb.org/noJS/index.php?d=next&url=https://possums.xyz/">
-          Next
-        </a>
+        <div>
+          <p>Yesterweb Web Ring:</p>
+          <a
+            href="https://webring.yesterweb.org/noJS/index.php?d=prev&url=https://possums.xyz/"
+            className="text-sapphire"
+          >
+            Previous
+          </a>
+          &nbsp;-&nbsp;
+          <a
+            href="https://webring.yesterweb.org/noJS/index.php?d=rand&url=https://possums.xyz/"
+            className="text-sapphire"
+          >
+            Random
+          </a>
+          &nbsp;-&nbsp;
+          <a
+            href="https://webring.yesterweb.org/noJS/index.php?d=next&url=https://possums.xyz/"
+            className="text-sapphire"
+          >
+            Next
+          </a>
+        </div>
+        <br />
         <p>
           {props.commands.map((command) => (
             <>

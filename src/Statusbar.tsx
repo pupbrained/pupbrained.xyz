@@ -1,15 +1,15 @@
-import { Dispatch, SetStateAction } from 'react'
-import Workspace from './Workspace'
-import Spotify from './Spotify'
-import Date from './Date'
-import Time from './Time'
-import React from 'react'
+import { Dispatch, SetStateAction } from "react";
+import Workspace from "./Workspace";
+import Spotify from "./Spotify";
+import Date from "./Date";
+import Time from "./Time";
+import React from "react";
 
 export default function Statusbar(props: {
-  active: number
-  setActive: Dispatch<SetStateAction<number>>
-  isMobileSmall: boolean
-  isMobileMed: boolean
+  active: number;
+  setActive: Dispatch<SetStateAction<number>>;
+  isMobileSmall: boolean;
+  isMobileMed: boolean;
 }) {
   return (
     <div className="flex items-center justify-center m-auto w-full">
@@ -31,5 +31,5 @@ export default function Statusbar(props: {
         </div>
       </div>
     </div>
-  )
+  );
 }

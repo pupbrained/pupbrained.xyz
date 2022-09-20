@@ -11,6 +11,7 @@
     "isolatedModules": true,
 
     "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "jsx": "react",
     "allowSyntheticDefaultImports": true
   }
