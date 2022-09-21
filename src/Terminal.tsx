@@ -286,6 +286,30 @@ export default function Terminal(props: {
           value: (
             <>
               {makeContactLink(
+                '',
+                'text-[#171515]',
+                'Github',
+                'pupbrained',
+                'https://github.com/pupbrained',
+                getRandom(randomAnim)
+              )}
+              {makeContactLink(
+                '戮',
+                'text-[#00c3e7]',
+                'Steam',
+                'pupbrained',
+                'https://steamcommunity.com/id/pupbrained',
+                getRandom(randomAnim)
+              )}
+              {makeContactLink(
+                '阮',
+                'text-[#1DB954]',
+                'Spotify',
+                'pupbrained',
+                'https://open.spotify.com/user/21hvrddjilwmxvx5aueqyamyy',
+                getRandom(randomAnim)
+              )}
+              {makeContactLink(
                 '暑',
                 'text-[#1d9bf0]',
                 'Twitter',
@@ -305,32 +329,16 @@ export default function Terminal(props: {
                 'ﭮ',
                 'text-[#5865f2]',
                 'Discord',
-                'pupbrained#1999',
+                'pupbrained',
                 'https://discord.com/users/449287407142043658',
                 getRandom(randomAnim)
               )}
               {makeContactLink(
-                '',
-                'text-[#171515]',
-                'Github',
-                'marsupialgutz',
-                'https://github.com/marsupialgutz',
-                getRandom(randomAnim)
-              )}
-              {makeContactLink(
-                '戮',
-                'text-[#00c3e7]',
-                'Steam',
-                'marsupialgutz',
-                'https://steamcommunity.com/id/marsupialgutz',
-                getRandom(randomAnim)
-              )}
-              {makeContactLink(
-                '阮',
-                'text-[#1DB954]',
-                'Spotify',
-                'marsupialgutz',
-                'https://open.spotify.com/user/21hvrddjilwmxvx5aueqyamyy',
+                '',
+                'text-[#df675c]',
+                'Email',
+                'mars@possums.xyz',
+                'mailto:mars@possums.xyz',
                 getRandom(randomAnim)
               )}
               {makeContactLink(
