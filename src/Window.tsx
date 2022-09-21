@@ -1,20 +1,20 @@
-import React, { ReactNode, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import Sona from "./Sona";
-import Terminal from "./Terminal";
+import React, { ReactNode, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import Sona from './Sona'
+import Terminal from './Terminal'
 
 export default function Window(props: { active: number; isMobile: boolean }) {
-  const [selected, setSelected] = useState(0);
+  const [selected, setSelected] = useState(0)
   const [commands, setCommands] = useState<
     {
-      name: string;
-      value: ReactNode;
+      name: string
+      value: ReactNode
     }[]
-  >([]);
+  >([])
 
   return (
-    <AnimatePresence mode="wait" initial={false}>
-      <div className="flex items-center justify-center h-full w-full overflow-hidden bg-basetranslucent rounded-2xl backdrop-blur-md">
+    <AnimatePresence mode='wait' initial={false}>
+      <div className='flex items-center justify-center h-full w-full overflow-hidden bg-basetranslucent rounded-2xl backdrop-blur-md'>
         {
           {
             1: (
@@ -23,7 +23,7 @@ export default function Window(props: { active: number; isMobile: boolean }) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="h-full w-full"
+                className='h-full w-full'
               >
                 <Terminal commands={commands} setCommands={setCommands} />
               </motion.div>
@@ -34,7 +34,7 @@ export default function Window(props: { active: number; isMobile: boolean }) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="h-full w-full"
+                className='h-full w-full'
               >
                 <Sona
                   selected={selected}
@@ -47,5 +47,5 @@ export default function Window(props: { active: number; isMobile: boolean }) {
         }
       </div>
     </AnimatePresence>
-  );
+  )
 }

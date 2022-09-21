@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "JetBrainsMono Nerd Font";
-  src: url("/src/assets/jetbrains.ttf");
+  font-family: 'JetBrainsMono Nerd Font';
+  src: url('/src/assets/jetbrains.ttf');
 }
 
 @font-face {
-  font-family: "Hack Nerd Font";
-  src: url("/src/assets/hack.ttf");
+  font-family: 'Hack Nerd Font';
+  src: url('/src/assets/hack.ttf');
 }
 
 html,
