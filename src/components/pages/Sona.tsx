@@ -2,9 +2,9 @@ import React, { Dispatch, SetStateAction, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import clsx from 'clsx'
 
-import img1 from '/src/assets/1.webp'
-import img2 from '/src/assets/2.webp'
-import img3 from '/src/assets/3.webp'
+import img1 from '/src/assets/imgs/sona/1.webp'
+import img2 from '/src/assets/imgs/sona/2.webp'
+import img3 from '/src/assets/imgs/sona/3.webp'
 
 export default function Sona(props: {
   selected: number

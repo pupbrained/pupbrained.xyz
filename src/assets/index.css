@@ -4,12 +4,12 @@
 
 @font-face {
   font-family: 'JetBrainsMono Nerd Font';
-  src: url('/src/assets/jetbrains.ttf');
+  src: url('/src/assets/fonts/jetbrains.ttf');
 }
 
 @font-face {
   font-family: 'Hack Nerd Font';
-  src: url('/src/assets/hack.ttf');
+  src: url('/src/assets/fonts/hack.ttf');
 }
 
 html,

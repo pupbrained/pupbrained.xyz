@@ -32,7 +32,7 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <main className='font-jetbrains bg-[url("/src/assets/wall.webp")] h-full w-full p-5'>
+      <main className='font-jetbrains bg-[url("/src/assets/imgs/bg.webp")] h-full w-full p-5'>
         <div className='gap-5 w-full h-full flex flex-col'>
           <Statusbar
             active={active}

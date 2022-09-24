@@ -15,11 +15,11 @@ import clsx from 'clsx'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
 import * as Random from 'react-random-reveal'
-import mars from '/src/assets/mars.webp'
-import herb from '/src/assets/herb.webp'
-import tofu from '/src/assets/tofu.webp'
-import river from '/src/assets/river.webp'
-import fen from '/src/assets/fen.webp'
+import mars from '/src/assets/imgs/term/mars.webp'
+import herb from '/src/assets/imgs/term/herb.webp'
+import tofu from '/src/assets/imgs/term/tofu.webp'
+import river from '/src/assets/imgs/term/river.webp'
+import fen from '/src/assets/imgs/term/fen.webp'
 
 const { RandomReveal } = Random
 
