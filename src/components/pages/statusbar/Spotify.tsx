@@ -7,7 +7,7 @@ export default function Spotify(props: {
   isMobileMed: boolean
 }) {
   const { isLoading, data } = useQuery('spotifyStatus', () =>
-    fetch('https://music.possums.xyz').then((res) => res.json())
+    fetch('https://music.pupbrained.xyz').then((res) => res.json())
   )
 
   const length = props.isMobileSmall ? 15 : props.isMobileMed ? 18 : 30
