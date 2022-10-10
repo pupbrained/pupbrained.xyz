@@ -7,6 +7,8 @@ import './assets/index.css'
 
 const App = () => {
   const [active, setActive] = useState(1)
+  const queryClient = new QueryClient()
+  const urlParams = new URLSearchParams(window.location.search)
 
   const useWindowSize = () => {
     const [windowSize, setWindowSize] = useState(window.innerWidth)
@@ -28,7 +30,15 @@ const App = () => {
   const large = useWindowSize() < 1280
   const medium = useWindowSize() < 768
   const small = useWindowSize() < 640
-  const queryClient = new QueryClient()
+
+  useEffect(() => {
+    const activeParam = urlParams.get('ws')
+    if (activeParam) {
+      if (parseInt(activeParam) === 1 || parseInt(activeParam) === 2) {
+        setActive(parseInt(activeParam))
+      }
+    }
+  }, [])
 
   return (
     <QueryClientProvider client={queryClient}>
