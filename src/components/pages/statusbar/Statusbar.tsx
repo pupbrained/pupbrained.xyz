@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react'
 import Workspace from './Workspace'
-import Spotify from './Spotify'
+
 import Date from './Date'
 import Time from './Time'
 import React from 'react'
@@ -22,10 +22,7 @@ export default function Statusbar(props: {
             <p className='text-yellow'> </p>
             <p className='text-yellow'>MardFi</p>
           </div>
-          <Spotify
-            isMobileSmall={props.isMobileSmall}
-            isMobileMed={props.isMobileMed}
-          />
+
           <Date />
           <Time />
         </div>
